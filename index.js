@@ -76,4 +76,4 @@ document.addEventListener("keydown", (event) => {
     if(event.code === 'Enter'){
         func()
     }
-    })
+})
