@@ -4,7 +4,7 @@ const weatherBox = document.querySelector('.weather-box')
 const weatherDetails = document.querySelector('.weather-details')
 const error404 = document.querySelector('.not-found')
 
-search.addEventListener('click', () => {
+const func = () => {
 
     const API_KEY = '10642371e39c6c81714cb0c55f71f17f'
     const city = document.querySelector('.search-box input').value
@@ -47,6 +47,8 @@ search.addEventListener('click', () => {
                 img.src = 'images/cloud.png'
                 break
             case 'Mist':
+            case "Haze":
+            case "Fog":
                 img.src = 'images/mist.png'
                 break   
             default:
@@ -57,14 +59,21 @@ search.addEventListener('click', () => {
         temperature.innerHTML = `${Math.round(json.main.temp)}<span>°C</span>`
         description.innerHTML = `${json.weather[0].description}`
         humidity.innerHTML = `${json.main.humidity}%`
-        wind.innerHTML = `${json.wind.speed.toFixed(1)} Km/h`
+        wind.innerHTML = `${json.wind.speed.toFixed(1)}km/h`
 
         weatherBox.style.display = '';
         weatherDetails.style.display = ''
         weatherDetails.classList.add('fade-in')
         weatherBox.classList.add('fade-in')
-        container.style.height = '590px';
+        container.style.height = '590px'
     })
 
 
-})
+}
+
+search.addEventListener('click', func)
+document.addEventListener("keydown", (event) => {
+    if(event.code === 'Enter'){
+        func()
+    }
+    })
