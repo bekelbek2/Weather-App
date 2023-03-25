@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A Web Application that shows the temperature, humidity and wind speed of searched city or country",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bekelbek2/Weather-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bekelbek2/Weather-App/issues"
+  },
+  "homepage": "https://github.com/bekelbek2/Weather-App#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}

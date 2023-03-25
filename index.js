@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const container = document.querySelector('.container')
 const search = document.querySelector('.search-box button')
 const weatherBox = document.querySelector('.weather-box')
@@ -6,7 +8,7 @@ const error404 = document.querySelector('.not-found')
 
 const func = () => {
 
-    const API_KEY = '10642371e39c6c81714cb0c55f71f17f'
+    const API_KEY = process.env.API_KEY
     const city = document.querySelector('.search-box input').value
 
     if(city === '')
